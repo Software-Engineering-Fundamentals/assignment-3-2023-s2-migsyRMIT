@@ -1,0 +1,3 @@
+class Instructor {
+    super.Employee();
+}
