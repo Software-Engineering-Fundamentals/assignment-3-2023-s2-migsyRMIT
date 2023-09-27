@@ -5,17 +5,27 @@ public class Main {
         // Create instructor object
         Instructor instructor = new Instructor("12345", "instructor@SEF.com", "password", "John", "Appleseed", "1 Second Street", "0412 345 678");
 
-        // Create inquiry arraylist
-        ArrayList<Integer> InquiryList = new ArrayList<Integer>();
+        // Create Manager object
+        Manager manager = new Manager("67890", "manager@SEF.com", "password123", "Bob", "Jones", "2 Third Avenue", "0498 765 432");
 
-        // Generate inquiry made by the instructor
+        // Create inquiry arraylist
+        ArrayList<Inquiry> InquiryList = new ArrayList<Inquiry>();
+
+        // Generate inquiry made by the instructor and append to arraylist
         int inquiryID = InquiryList.size() + 1;
         Date dateMade = new Date();
         String sender = instructor.getFirstName() + " " + instructor.getLastName();
-        String status = "pending";
-        String question = "What is the company's name?";
+        String status = "PENDING";
+        String question = "What is the learning platform called?";
+        String response = "";
 
-        InquiryList.add(inquiryID);
-        Inquiry inquiry = new Inquiry(inquiryID, dateMade, sender, status, question);
+        Inquiry inquiry = new Inquiry(inquiryID, dateMade, sender, status, question, response);
+        InquiryList.add(inquiry);
+
+        // Manager responds to instructor's inquiry
+        manager.trackInquiry(inquiry); // Manager tracks inquiry by its ID
+        response = "The learning platform is called 'IT Ed Serves'.";
+        manager.setResponse(response);
+        manager.updateInquiryStatus();
     }
 }
