@@ -27,5 +27,8 @@ public class Main {
         response = "The learning platform is called 'IT Ed Serves'.";
         manager.setResponse(response);
         manager.updateInquiryStatus();
+
+        // Inquiry is updated to COMPLETE
+        inquiry.updateStatus(manager.getInquiryStatus());
     }
 }

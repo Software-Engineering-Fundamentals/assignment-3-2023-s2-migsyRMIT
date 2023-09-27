@@ -45,4 +45,12 @@ public class Inquiry {
         this.response = managerResponse;
     }
 
+    public void updateStatus(boolean solved) {
+        if (solved == true) {
+            this.status = "SOLVED";
+        } else {
+            this.status = "PENDING";
+        }
+    }
+
 }
