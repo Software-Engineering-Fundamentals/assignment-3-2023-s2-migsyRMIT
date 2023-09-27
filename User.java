@@ -16,4 +16,12 @@ abstract class User {
         this.phoneNumber = phoneNumber;
         // PUT SHARED ATTRIBUTES OF EMPLOYEE IN SUPER
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }
