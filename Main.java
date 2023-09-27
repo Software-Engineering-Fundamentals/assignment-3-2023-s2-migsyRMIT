@@ -11,10 +11,11 @@ public class Main {
         // Generate inquiry made by the instructor
         int inquiryID = InquiryList.size() + 1;
         Date dateMade = new Date();
-        String sender = instructor.getFirstName(); + " " + instructor.getLastName();
+        String sender = instructor.getFirstName() + " " + instructor.getLastName();
         String status = "pending";
         String question = "What is the company's name?";
 
         InquiryList.add(inquiryID);
+        Inquiry inquiry = new Inquiry(inquiryID, dateMade, sender, status, question);
     }
 }
