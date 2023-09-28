@@ -1,3 +1,9 @@
 public class Course{
-    
+    private String courseId;
+    private String courseName;
+    private String category;
+    private int lengthWeeks;
+    private int censusDate;
+    private String coordinater;
+    private Array<String> Instructor;
 }
