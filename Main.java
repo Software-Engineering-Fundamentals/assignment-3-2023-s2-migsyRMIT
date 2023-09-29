@@ -15,7 +15,7 @@ public class Main {
         int inquiryID = InquiryList.size() + 1;
         Date dateMade = new Date();
         String sender = instructor.getFirstName() + " " + instructor.getLastName();
-        String status = "PENDING";
+        String status = "INCOMPLETE";
         String question = "What is the learning platform called?";
         String response = "";
 
@@ -26,9 +26,12 @@ public class Main {
         manager.trackInquiry(inquiry); // Manager tracks inquiry by its ID
         response = "The learning platform is called 'IT Ed Serves'.";
         manager.setResponse(response);
-        manager.updateInquiryStatus();
 
         // Inquiry is updated to COMPLETE
+        manager.updateInquiryStatus();
         inquiry.updateStatus(manager.getInquiryStatus());
+
+        // Instructor can view the manager's response to the inquiry
+        instructor.trackInquiryResponse(inquiry);
     }
 }

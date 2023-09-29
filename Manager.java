@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Manager extends Employee {
     private String inquiryResponse;
     private boolean solved;
