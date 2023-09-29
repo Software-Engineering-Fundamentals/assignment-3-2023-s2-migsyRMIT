@@ -8,11 +8,12 @@ public class Main {
         // Create Manager object
         Manager manager = new Manager("67890", "manager@SEF.com", "password123", "Bob", "Jones", "2 Third Avenue", "0498 765 432");
 
-        // Create inquiry arraylist
-        ArrayList<Inquiry> InquiryList = new ArrayList<Inquiry>();
+        // Create an active inquiry and archived inquiry arraylist
+        ArrayList<Inquiry> activeInquiryList = new ArrayList<Inquiry>();
+        ArrayList<Inquiry> archivedInquiryList = new ArrayList<Inquiry>();
 
-        // Generate inquiry made by the instructor and append to arraylist
-        int inquiryID = InquiryList.size() + 1;
+        // Generate inquiry made by the instructor and append to active inquiry arraylist
+        int inquiryID = activeInquiryList.size() + 1;
         Date dateMade = new Date();
         String sender = instructor.getFirstName() + " " + instructor.getLastName();
         String status = "INCOMPLETE";
@@ -20,17 +21,19 @@ public class Main {
         String response = "";
 
         Inquiry inquiry = new Inquiry(inquiryID, dateMade, sender, status, question, response);
-        InquiryList.add(inquiry);
+        activeInquiryList.add(inquiry);
 
         // Manager responds to instructor's inquiry
         manager.trackInquiry(inquiry); // Manager tracks inquiry by its ID
         response = "The learning platform is called 'IT Ed Serves'.";
         manager.setResponse(response);
 
-        // Inquiry is updated to COMPLETE
+        // Inquiry is updated to COMPLETE and is moved to the archived inquiry arraylist
         manager.updateInquiryStatus();
         inquiry.updateStatus(manager.getInquiryStatus());
-
+        activeInquiryList.remove(inquiry);
+        archivedInquiryList.add(inquiry);
+        
         // Instructor can view the manager's response to the inquiry
         instructor.trackInquiryResponse(inquiry);
     }
