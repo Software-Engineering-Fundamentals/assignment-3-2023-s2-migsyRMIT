@@ -58,14 +58,17 @@ public class Main {
                 Course course = new Course(courseId, courseName, category, lengthWeeks, censusDate, coordinater,
                                 courseInstructorList, courseStatus);
 
-                // Generate a invoice to register for course
+                // Instructor submits and registers for course
+                instructor.registerCourse(course);
+
+                // Invoice is generated to register for course
                 Invoice regInvoice = instructor.generateRegInvoice(course);
 
                 // Pay for course registration
-                courseStatus = regInvoice.payInvoice();
-
-                // Update course status to true
-                course.updateCourseStatus(courseStatus);
+                regInvoice.payInvoice();
+                regInvoice.updatePaymentStatus();
+                boolean paymentStatus = regInvoice.verifyPaymentStatus();
+                // CREATE SUBSCENARIO METHOD
 
         }
 }

@@ -8,7 +8,6 @@ public class Course {
     private Date censusDate;
     private Instructor coordinater;
     private ArrayList<Instructor> courseInstructorList;
-    private boolean courseStatus;
 
     public Course(String courseId, String courseName, String category, int lengthWeeks,
             Date censusDate, Instructor coordinater, ArrayList<Instructor> courseInstructorList, boolean courseStatus) {
@@ -19,11 +18,6 @@ public class Course {
         this.censusDate = censusDate;
         this.coordinater = coordinater;
         this.courseInstructorList = courseInstructorList;
-        this.courseStatus = courseStatus;
-    }
-
-    public boolean updateCourseStatus(boolean paymentStatus) {
-        return paymentStatus;
     }
 
     public Instructor getCoordinator() {

@@ -8,14 +8,21 @@ public class Instructor extends Employee {
         super(employeeId, email, password, firstName, lastName, address, phoneNumber);
     }
 
+    public boolean registerCourse(Course course) {
+        return true;
+    }
+
     public Invoice generateRegInvoice(Course course) {
         // create Date created for new invoice
         Date dateCreated = new Date();
         Instructor coordId = course.getCoordinator();
+
+        // Create invoice ID
+        String invoiceID = coordId.getEmployeeID() + dateCreated;
         // create invoice for registration
         // Invoice has not been paid so payment status = Unpaid
         // And datePaid is null
-        Invoice regInvoice = new Invoice("0001", coordId.getEmployeeID(), 5000, "UNPAID", dateCreated, null);
+        Invoice regInvoice = new Invoice(invoiceID, coordId.getEmployeeID(), 5000, "UNPAID", dateCreated, null);
         return regInvoice;
     }
 }

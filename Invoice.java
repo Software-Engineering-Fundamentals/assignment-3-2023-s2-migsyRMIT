@@ -19,9 +19,18 @@ public class Invoice {
     }
 
     public boolean payInvoice() {
-        this.paymentStatus = "PAID";
         this.datePaid = new Date();
         return true;
     }
 
+    public void updatePaymentStatus() {
+        this.paymentStatus = "PAID";
+    }
+
+    public boolean verifyPaymentStatus() {
+        if (this.paymentStatus == "PAID") {
+            return true;
+        }
+        return false;
+    }
 }
