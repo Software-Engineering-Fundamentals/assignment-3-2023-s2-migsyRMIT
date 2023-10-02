@@ -66,8 +66,7 @@ public class Main {
 
                 // Pay for course registration
                 regInvoice.payInvoice();
-                regInvoice.updatePaymentStatus();
-                boolean paymentStatus = regInvoice.verifyPaymentStatus();
+                boolean paymentStatus = regInvoice.verifyInvoice();
                 // CREATE SUBSCENARIO METHOD
 
         }
