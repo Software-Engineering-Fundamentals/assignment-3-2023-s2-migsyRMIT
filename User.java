@@ -24,4 +24,8 @@ abstract class User {
     public String getLastName() {
         return lastName;
     }
+
+    public String trackInquiryResponse(Inquiry inquiry) {
+        return inquiry.response;
+    }
 }

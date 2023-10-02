@@ -6,7 +6,7 @@ public class Inquiry {
     private String sender;
     private String status;
     private String question;
-    private String response;
+    public String response;
 
     public Inquiry(int inquiryID, Date dateMade, String sender, String status, String question, String response) {
         this.inquiryID = inquiryID;
@@ -47,9 +47,9 @@ public class Inquiry {
 
     public void updateStatus(boolean solved) {
         if (solved == true) {
-            this.status = "SOLVED";
+            this.status = "COMPLETE";
         } else {
-            this.status = "PENDING";
+            this.status = "INCOMPLETE";
         }
     }
 
