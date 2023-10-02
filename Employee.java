@@ -8,4 +8,8 @@ public class Employee extends User {
 
     }
 
+    public String getEmployeeID() {
+        return this.employeeId;
+    }
+
 }

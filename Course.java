@@ -26,7 +26,7 @@ public class Course {
         return paymentStatus;
     }
 
-    public boolean getCourseStatus() {
-        return this.courseStatus;
+    public Instructor getCoordinator() {
+        return this.coordinater;
     }
 }
