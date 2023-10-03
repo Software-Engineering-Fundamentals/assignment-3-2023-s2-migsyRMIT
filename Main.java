@@ -66,8 +66,7 @@ public class Main {
 
                 // Pay for course registration
                 regInvoice.payInvoice();
-                boolean paymentStatus = regInvoice.verifyInvoice();
-                // CREATE SUBSCENARIO METHOD
+                boolean paymentStatus = regInvoice.verifyPaymentDetails();
 
         }
 }

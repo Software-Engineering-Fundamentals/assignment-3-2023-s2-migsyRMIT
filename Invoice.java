@@ -19,13 +19,14 @@ public class Invoice {
     }
 
     public boolean payInvoice() {
+        // change status to paid and add date paid
         this.paymentStatus = "PAID";
         this.datePaid = new Date();
         return true;
     }
 
-
-    public boolean verifyInvoice() {
+    public boolean verifyPaymentDetails() {
+        // If status is paid then payment is verified
         if (this.paymentStatus == "PAID") {
             return true;
         }
